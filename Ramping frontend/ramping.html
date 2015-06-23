@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>	
+	<title>User Settings</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link href="css/css/base.css" rel="stylesheet">
+    <link href="css/css/style.css" rel="stylesheet">
+ 
+
+	<script src="js/jquery-2.1.4.js"></script> 
+	<script src="js/jquery-ui.min.js"></script> 
+	<script src="js/ramping.js"></script> 
+</head>
+<body>
+	<p id="welcomeTitle" align="center"> Welcome User </p>
+	<input id="adduser" type="button" value="Add User"> </input>
+	<input id="logout" type="button" value="logout"> </input>
+	<div id="addUserDialog"> </div>
+
+	<div id = "UserDetailsDiv"> 
+		<label for="name">Customer No:</label>		
+		<input id="customerNo" type="name">		
+		<label for="name">Username:</label>		
+		<input id="username" type="name">		
+		<label for="password">Password:</label>				
+		<input id="password" type="password">				
+	</div>
+	<!-- <div class="switch">
+		<input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+		<label for="cmn-toggle-1"></label>
+	</div>
+ -->
+ <div id="tableSettings" style="width: 50%; margin: 0 auto;">
+ 	<div style="width: 70%; margin: 0 auto;"> 
+
+	 	<table id="settingsList" align="center" border="1" class="floatedTable" > 
+			<tr><th> Features </th> <th> Default Settings</th> </tr>
+		</table>
+
+		<table id="usersList" align="center" border="1"> 
+			<tr><th> My Settings </th></tr>
+		</table>		
+
+	</div>
+
+</div>
+
+</div>
+<div class="wrapper">
+    <button id="saveSettings" class="button">Save Settings</button>
+</body>
+
+</html>
