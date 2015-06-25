@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 
 var usersFeatures = {
     customerNo: String,
-    features : {}
+    features : {},
 };
 
 module.exports = mongoose.model('usersFeatures', usersFeatures, 'RampUsersFeaturesDB');

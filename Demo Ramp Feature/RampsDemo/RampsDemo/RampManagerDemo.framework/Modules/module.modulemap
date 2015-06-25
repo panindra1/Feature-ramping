@@ -1,0 +1,10 @@
+framework module RampManagerDemo {
+  umbrella header "RampManagerDemo.h"
+
+  export *
+  module * { export * }
+}
+
+module RampManagerDemo.Swift {
+    header "RampManagerDemo-Swift.h"
+}

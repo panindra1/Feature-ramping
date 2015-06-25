@@ -23,25 +23,24 @@ $(document).ready(function(){
 			dataType: "json",
 			//data: {"username": username, "password": password},
 			success: function(data) {	
-
 				var features = data[0].features
 				var keys = Object.keys(features);
 				
-				for(var i = 0; i < keys.length; i++) {
+				for(var i = 0; i < keys.length; i++) {					
 					var checked = false
-					var isTrueSet = (features[keys[i]] === true);
+					var isTrueSet = (features[featureKeys[i]] === true);
 
-					var elm = '	<div class="switch"><input id="default-cmn-toggle-'+i+'" name="default_settings" class="cmn-toggle cmn-toggle-round" type="checkbox" value="'+keys[i]+'" ><label for="default-cmn-toggle-'+i+'"></label> </div>'
+					var elm = '	<div class="switch"><input id="default-cmn-toggle-'+i+'" name="default_settings" class="cmn-toggle cmn-toggle-round" type="checkbox" value="'+featureKeys[i]+'" ><label for="default-cmn-toggle-'+i+'"></label> </div>'
 
 					if(isTrueSet == true) {
-						elm = '	<div class="switch"><input id="default-cmn-toggle-'+i+'" name="default_settings" class="cmn-toggle cmn-toggle-round" type="checkbox" checked value="'+keys[i]+'"><label for="default-cmn-toggle-'+i+'"></label> </div>'
+						elm = '	<div class="switch"><input id="default-cmn-toggle-'+i+'" name="default_settings" class="cmn-toggle cmn-toggle-round" type="checkbox" checked value="'+featureKeys[i]+'"><label for="default-cmn-toggle-'+i+'"></label> </div>'
 					}
 					
-					$('#settingsList').append('<tr align = "center"> <td >' + keys[i]+' </td> <td > '+ elm+'</td> </tr>')					
+					$('#settingsList').append('<tr align = "center"> <td >' + featureKeys[i]+' </td> <td > '+ elm+'</td> </tr>')					
 					
 					if(username != "admin") {
 						$(".cmn-toggle").attr('disabled', true);
-					}
+					}						
 				}
 			}
 	});
@@ -68,26 +67,26 @@ $(document).ready(function(){
 						var features = data[0].features
 
 						var keys = Object.keys(features);
-				
-						for(var i = 0; i < keys.length; i++) {
+						
+						for(var i = 0; i < featureKeys.length; i++) {							
 							var checked = false
 							var isTrueSet = (features[featureKeys[i]] === true);
 
-							var elm = '	<div class="switch"><input name="userSettings" id="cmn-toggle-'+i+'" class="cmn-toggle cmn-toggle-round" type="checkbox" value="'+keys[i]+'"><label for="cmn-toggle-'+i+'"></label> </div>'
+							var elm = '	<div class="switch"><input name="userSettings" id="cmn-toggle-'+i+'" class="cmn-toggle cmn-toggle-round" type="checkbox" value="'+featureKeys[i]+'"><label for="cmn-toggle-'+i+'"></label> </div>'
 
 							if(isTrueSet == true) {
-								elm = '	<div class="switch"><input name="userSettings" id="cmn-toggle-'+i+'" class="cmn-toggle cmn-toggle-round" type="checkbox" checked value="'+keys[i]+'"><label for="cmn-toggle-'+i+'"></label> </div>'
+								elm = '	<div class="switch"><input name="userSettings" id="cmn-toggle-'+i+'" class="cmn-toggle cmn-toggle-round" type="checkbox" checked value="'+featureKeys[i]+'"><label for="cmn-toggle-'+i+'"></label> </div>'
 							}
 						
-							if(keys[i])
-								$('#usersList').append('<tr align = "center"> <td > '+ elm+'</td> </tr>')					
+							if(featureKeys[i])
+								$('#usersList').append('<tr align = "center"> <td > '+ elm+'</td> </tr>')												
 						}
 						
 					}
 				});
 			}
 	});
-	
+	/*
 	 $(document).on("change", "input[name='userSettings']", function () {
 	    //alert(this.id);
 	    if (this.checked) {
@@ -97,7 +96,7 @@ $(document).ready(function(){
 	    	}
 	    }	    	    
 	});
-
+	*/
 	$('#saveSettings').click(function() {
 		if(username == "admin") {
 			var defaultSettinValues = {};

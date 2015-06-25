@@ -13,7 +13,8 @@ router.get('/', function(req, res, next) {
   user.find({username: username, password : password}, function(error, object) {
     console.log(error);
     if (object.length != 0) {
-      res.send("success");
+      //res.send({"authentication": "success"});
+      res.send({"customerNo" : object[0]["customerNo"]})
     }
     else {
       res.send("failure");
@@ -35,7 +36,9 @@ router.get('/addUser', function(req, res, next) {
     console.log(error);
     if (object.length != 0) {
       res.send("Added!");
-      userFeatures.create({customerNo: customerNo, features: {"Logging" : true, "Authentication": false, "Instrumentation" : true, "Notificaitons": false, "Email_marketting": true, "GoSocial": true }}, function(error, object) {
+
+      var defaultfeatures = {"Logging" : true, "Authentication": false, "Instrumentation" : true, "Notificaitons": false, "Email_marketting": true, "GoSocial": true }
+      userFeatures.create({customerNo: customerNo, features: defaultfeatures}, function(error, object) {
         console.log(object);
       });
     }
@@ -78,6 +81,10 @@ router.get('/getUserSettings', function(req, res, next) {
 
   userFeatures.find({customerNo: customerNo}, function(error, object) {
     if (object.length != 0) {
+      var cacheMinutes = new Date();
+      var newDateObj = new Date(cacheMinutes.getTime() + 2*60000);
+      object[0]["features"]["Exp_date"] =  newDateObj.getTime();
+      //console.log(object)
       res.send(object);
     }
     else {
