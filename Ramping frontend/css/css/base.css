@@ -10,7 +10,7 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-  background: transparent;
+  /*background: transparent;*/
   border: 0;
   margin: 0;
   padding: 0;
@@ -19,6 +19,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
   line-height: 1;
+  background-color: #E8E8E8;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,7 +66,7 @@ a img {
 }
 
 body {
-  background-color: #dc8c96;
+  background-color: #E8E8E8;
   color: #505050;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -306,58 +307,5 @@ footer .copyright a {
   font-weight: 700;
 }
 
-/* ============================================================
-  MEDIA QUERIES
-============================================================ */
-@media all and (max-width: 960px) {
-  /* footer */
-  footer aside {
-    width: 100%;
-    float: none;
-    margin-bottom: 15px;
-  }
-  footer aside:last-child {
-    margin-bottom: 0;
-  }
-  footer aside.logo {
-    text-align: center;
-  }
-  footer ul {
-    text-align: center;
-  }
-  footer ul li {
-    display: inline-block;
-  }
-  footer ul li:after {
-    content: "\2022";
-  }
-  footer ul li:last-child:after {
-    content: none;
-  }
-  footer ul li a {
-    margin: 0 10px;
-  }
-}
-@media all and (max-width: 400px) {
-  header .branding {
-    padding: 15px 0;
-  }
-  header .branding .container {
-    padding: 0 30px;
-  }
-  header .social {
-    float: none;
-    width: 100%;
-    text-align: center;
-    line-height: 30px;
-    height: 30px;
-  }
-  header .social a {
-    margin: 0 5px;
-  }
-  header .logo {
-    float: none;
-    margin: 0 auto;
-    margin-bottom: 15px;
-  }
+
 }

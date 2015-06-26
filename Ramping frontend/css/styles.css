@@ -8,13 +8,13 @@
 /* Selections */
 
 ::selection {
- 	color: #fff;
+ 	color: #E8E8E8;
  	text-shadow: none;
  	background: #444;
 }
 
 ::-moz-selection {
- 	color: #fff;
+ 	color: #E8E8E8;
  	text-shadow: none;
  	background: #444;
 }
@@ -28,7 +28,7 @@ html, body {
 	color: #444;
 	-webkit-font-smoothing: antialiased;
 	background: #f0f0f0;
-	background-color: #dc8c96;
+	background-color: #E8E8E8;
 	
 }
 

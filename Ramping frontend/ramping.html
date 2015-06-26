@@ -6,16 +6,60 @@
 	<link rel="stylesheet" href="css/jquery-ui.min.css">
 	<link href="css/css/base.css" rel="stylesheet">
     <link href="css/css/style.css" rel="stylesheet">
- 
+ 	<link href="css/dropdown.css" rel="stylesheet">
 
 	<script src="js/jquery-2.1.4.js"></script> 
 	<script src="js/jquery-ui.min.js"></script> 
 	<script src="js/ramping.js"></script> 
 </head>
 <body>
-	<p id="welcomeTitle" align="center"> Welcome User </p>
-	<input id="adduser" type="button" value="Add User"> </input>
+	<div class="menu-wrap">
+	    <nav class="menu">
+	        <ul class="clearfix">
+	            <li class="current-item"><a href="#">Applications <span class="arrow">&#9660;</span> </a>
+	            <ul class="sub-menu">
+	                    <li><a href="#">Investor App</a></li>
+	                    <li><a href="#">Domain Finder</a></li>
+	                    <li><a href="#">Domain Buy</a></li>
+	                    <li><a href="#">Godaddy Bookkeeping</a></li>
+	                </ul>
+	                </li>
+	            <li>
+	                <a href="#">Application Versions <span class="arrow">&#9660;</span></a>
+	 
+	                <ul class="sub-menu">
+	                    <li><a href="#">V1</a></li>
+	                    <li><a href="#">V1.5</a></li>
+	                    <li><a href="#">V2</a></li>
+	                    <li><a href="#">V3</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#">Locations <span class="arrow">&#9660;</span></a>
+	              <ul class="sub-menu">
+	                    <li><a href="#">USA</a></li>
+	                    <li><a href="#">UK</a></li>
+	                    <li><a href="#">INDIA</a></li>
+	                    <li><a href="#">CHINA</a></li>
+	                </ul>
+	            </li>
+	            <li ><a href="#">Environment <span class="arrow">&#9660;</span></a> 
+	            <ul class="sub-menu">
+	                    <li><a href="#">USA</a></li>
+	                    <li><a href="#">UK</a></li>
+	                    <li><a href="#">INDIA</a></li>
+	                    <li><a href="#">CHINA</a></li>
+	                </ul>
+	            </li>
+	            <li><a href="#">Help</a></li>
+	        </ul>
+	    </nav>
+	</div>
+
+</br>
+<input id="adduser" type="button" value="Add User"> </input>
 	<input id="logout" type="button" value="logout"> </input>
+	<h2 id="welcomeTitle" align="center"> Welcome User </h2> </br>
+	
 	<div id="addUserDialog"> </div>
 
 	<div id = "UserDetailsDiv"> 
@@ -26,11 +70,7 @@
 		<label for="password">Password:</label>				
 		<input id="password" type="password">				
 	</div>
-	<!-- <div class="switch">
-		<input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
-		<label for="cmn-toggle-1"></label>
-	</div>
- -->
+	
  <div id="tableSettings" style="width: 50%; margin: 0 auto;">
  	<div style="width: 70%; margin: 0 auto;"> 
 

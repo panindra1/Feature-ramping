@@ -1,12 +1,8 @@
 $(document).ready(function(){	
+	alert("loaded");
 	$('#login').click(function() {
 		var username = $('#username').val();
 		var password = $('#password').val();
-
-		if(username =="" || password == "") {
-			alert("Please Enter Username and Password")
-			return
-		}
 		//alert(username + password)
 		localStorage.setItem("username", username);
 		localStorage.setItem("password", password);
@@ -19,7 +15,7 @@ $(document).ready(function(){
 			success: function(data) {
 				//alert(JSON.stringify(data));
 				if(data["authentication"] != "success") {
-					document.location.href='file:///Users/ptumkurseetharamu/Desktop/Demo%20-%20claudio%20-%20Thursday/Ramping%20frontend/ramping.html';
+					document.location.href='file:///Users/ptumkurseetharamu/Desktop/Feature Ramping/Ramping frontend/ramping.html';
 				}
 			}
 		})

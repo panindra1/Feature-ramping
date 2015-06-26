@@ -10,17 +10,25 @@ import UIKit
 
 
 class TableController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var welcomeText: UILabel!
     @IBOutlet weak var myTableView: UITableView!
     var featureEnabledArr : [String] = []
     var customerNo:String?
+    var userName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myTableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+        fetchData()
+        var timer = NSTimer.scheduledTimerWithTimeInterval(60.0, target: self, selector: Selector("fetchData"), userInfo: nil, repeats: true)
+}
 
+    func fetchData() {
+        self.featureEnabledArr = []
         var isCacheFileExist = Util.sharedInstance.isCacheFileExists()
         var isExpired:Bool = true
         var result:JSON?
+        welcomeText.text = "Welcome " + userName! + "!"
 
         if(isCacheFileExist) {
             result = Util.sharedInstance.getCachedRampDataIfNotExpired()
@@ -33,7 +41,7 @@ class TableController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
 
         if(isExpired) {
-            Util.sharedInstance.getUserSettings(customerNo!, completionHandler: { (result, error) -> Void in         
+            Util.sharedInstance.getUserSettings(customerNo!, completionHandler: { (result, error) -> Void in
                 self.featureEnabledArr = []
                 self.fillFeatureArray(result)
 
@@ -46,6 +54,7 @@ class TableController: UIViewController, UITableViewDataSource, UITableViewDeleg
             fillFeatureArray(result!)
             myTableView.reloadData()
         }
+
     }
 
     func fillFeatureArray(result: JSON) {
@@ -57,18 +66,6 @@ class TableController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
 
 
-    func filltableData(jsonResult : JSON) {
-        for (key: String, subJson: JSON) in jsonResult {
-            if jsonResult[key] == true {
-                self.featureEnabledArr.append(key)
-            }
-        }
-
-        dispatch_async(dispatch_get_main_queue()) {
-            self.myTableView.reloadData()
-        };
-
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -88,5 +85,10 @@ class TableController: UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.featureEnabledArr.count
     }
+    @IBAction func onCLose(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
 }
+
 

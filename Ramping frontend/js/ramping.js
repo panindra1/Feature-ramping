@@ -136,13 +136,13 @@ $(document).ready(function(){
 			dataType: "json",
 			data: {"customerNo": customerNo, "features": checkboxValues},
 			success: function(data) {			
-
+				alert("Your settings saved!")
 			}
 		});
 	});
 
 	$('#logout').click(function() {
-		document.location.href='file:///Users/ptumkurseetharamu/Desktop/Feature Ramping/Ramping frontend/index.html';
+		document.location.href='file:///Users/ptumkurseetharamu/Desktop/Demo%20-%20claudio%20-%20Thursday/Ramping%20frontend/index.html';
 	});
 
 

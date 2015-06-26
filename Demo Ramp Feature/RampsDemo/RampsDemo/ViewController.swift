@@ -39,7 +39,8 @@ class ViewController: UIViewController {
             dispatch_async(dispatch_get_main_queue()) {
                 var tableViewController:TableController = self.storyboard?.instantiateViewControllerWithIdentifier("tableView") as! TableController
                 tableViewController.customerNo = customerNo.string!
-
+                tableViewController.userName = self.usernameTxtfield.text!
+                
                 self.presentViewController(tableViewController, animated: true, completion: nil)
             };
         })

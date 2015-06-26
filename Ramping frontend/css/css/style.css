@@ -1,3 +1,4 @@
+
 /* ============================================================
   COMMON
 ============================================================ */
@@ -107,14 +108,11 @@ table, th, td {
   float:left;
 }
 
-
-
 #saveSettings {
-  background-color: #ADD8E6;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
+  background-color: #ffffff; 
   border: 1px solid #009900;
-  padding: 5px;
+  font-size: 100%;
+  padding: 20px;
 }
 
 .wrapper {
@@ -125,9 +123,7 @@ table, th, td {
     position: relative;
     margin-top: 40px;
     top: 70%;
-    background-color: #ADD8E6;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
+    background-color: #ffffff;    
     border: 1px solid #009900;
     padding: 5px;
 }
@@ -135,9 +131,8 @@ table, th, td {
 #adduser, #logout {
   float : right;
   margin-right: 15px;
-  background-color: #ADD8E6;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
+  background-color: #ffffff;  
   border: 1px solid #009900;
-  padding: 5px;
+  font-size: 80%;
+  padding: 10px;
 }
