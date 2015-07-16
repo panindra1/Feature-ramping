@@ -46,11 +46,11 @@ public class Util :NSObject {
 
         //println(paths[0])
         var isExpired:Bool = true
-        var rampDict: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath)
+        let rampDict: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath)
         let seconds = Int(NSDate().timeIntervalSince1970 * 1000);
         var data = JSON(rampDict!)[0]
 
-        var exp_date =  data["features"]["Exp_date"].int
+        let exp_date =  data["features"]["Exp_date"].int
 
         if( ((exp_date! - seconds)) > 0.0) {
             isExpired = false
@@ -66,7 +66,7 @@ public class Util :NSObject {
         let path = NSBundle.mainBundle().pathForResource("rampEmbed", ofType: "json")
         let jsonResult = JSON(NSKeyedUnarchiver.unarchiveObjectWithFile(path!)!)
 
-        var features = jsonResult["features"]
+        let features = jsonResult["features"]
         //println(features)
 
         return features

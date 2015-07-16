@@ -25,7 +25,7 @@ class TableController: UIViewController, UITableViewDataSource, UITableViewDeleg
 
     func fetchData() {
         self.featureEnabledArr = []
-        var isCacheFileExist = Util.sharedInstance.isCacheFileExists()
+        let isCacheFileExist = Util.sharedInstance.isCacheFileExists()
         var isExpired:Bool = true
         var result:JSON?
         welcomeText.text = "Welcome " + userName! + "!"
@@ -58,7 +58,7 @@ class TableController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
 
     func fillFeatureArray(result: JSON) {
-        for (key: String, subJson: JSON) in result {
+        for (key, subJson): (String, JSON) in result {
             if result[key] == true {
                 self.featureEnabledArr.append(key)
             }
@@ -73,9 +73,9 @@ class TableController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell") as! UITableViewCell
-        cell.textLabel?.text = self.featureEnabledArr[indexPath.row]
-        return cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("tableViewCell") as! UITableViewCell?
+        cell!.textLabel?.text = self.featureEnabledArr[indexPath.row]
+        return cell!
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

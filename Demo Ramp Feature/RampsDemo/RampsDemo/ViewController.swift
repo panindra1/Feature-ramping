@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 
     @IBAction func onLogin(sender: AnyObject) {
         //println(passwordTxtfield.text);
-        RampManager.sharedInstance.login(usernameTxtfield.text, password : passwordTxtfield.text, completionHandler: { (result, error) -> Void in
+        RampManager.sharedInstance.login(usernameTxtfield.text!, password : passwordTxtfield.text!, completionHandler: { (result, error) -> Void in
             let customerNo = JSON(result)["customerNo"]
 
             dispatch_async(dispatch_get_main_queue()) {
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         var settings = JSON(data!.valueForKey("features")!)
 
         
-        for (key: String, subJson: JSON) in settings {
+        for (key, subJson): (String, JSON) in settings {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.defaultFeaturesTxtView.text = self.defaultFeaturesTxtView.text + "\n" + key + " : " + String(stringInterpolationSegment: settings[key])
                 };

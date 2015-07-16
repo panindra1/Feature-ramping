@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D2O-8n-zSR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -106,6 +107,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AnY-5I-bz9" id="vci-uH-XXc">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -121,7 +123,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRh-aA-038">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="8" y="34" width="327" height="37.5"/>
@@ -130,7 +132,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is the list of your default Ramp settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPP-by-W1m">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="8" y="77" width="384" height="21"/>
@@ -207,6 +209,7 @@
                                 <exclude reference="Sc7-kL-IEY"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4TQ-Ge-dUq"/>
                                 <exclude reference="0oK-uZ-OmK"/>
                                 <exclude reference="bz2-oD-bDG"/>
                                 <exclude reference="leH-8L-Afi"/>
@@ -215,7 +218,6 @@
                                 <exclude reference="UMr-XN-eTW"/>
                                 <exclude reference="chp-IO-Dqm"/>
                                 <exclude reference="sbe-H0-vpB"/>
-                                <exclude reference="4TQ-Ge-dUq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -224,6 +226,7 @@
                                 <include reference="Sc7-kL-IEY"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="4TQ-Ge-dUq"/>
                                 <include reference="0oK-uZ-OmK"/>
                                 <include reference="bz2-oD-bDG"/>
                                 <include reference="leH-8L-Afi"/>
@@ -232,7 +235,6 @@
                                 <include reference="UMr-XN-eTW"/>
                                 <include reference="chp-IO-Dqm"/>
                                 <include reference="sbe-H0-vpB"/>
-                                <include reference="4TQ-Ge-dUq"/>
                             </mask>
                         </variation>
                     </view>
@@ -356,11 +358,11 @@
                                 <exclude reference="Ob5-Zu-iHY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="DPO-ym-3Kj"/>
-                                <exclude reference="RKy-9z-Jy1"/>
                                 <exclude reference="Uv0-EM-GYZ"/>
                                 <exclude reference="eLE-Ky-Tft"/>
                                 <exclude reference="vyY-XZ-lbh"/>
+                                <exclude reference="DPO-ym-3Kj"/>
+                                <exclude reference="RKy-9z-Jy1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -369,11 +371,11 @@
                                 <include reference="Ob5-Zu-iHY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="DPO-ym-3Kj"/>
-                                <include reference="RKy-9z-Jy1"/>
                                 <include reference="Uv0-EM-GYZ"/>
                                 <include reference="eLE-Ky-Tft"/>
                                 <include reference="vyY-XZ-lbh"/>
+                                <include reference="DPO-ym-3Kj"/>
+                                <include reference="RKy-9z-Jy1"/>
                             </mask>
                         </variation>
                     </view>
